@@ -1,0 +1,204 @@
+/* =========================
+   Color & Typography
+   ========================= */
+:root {
+  --garnet: #73000A;
+  --garnet-dark: #4f0006;
+  --black: #000;
+  --text-muted: #6b6b6b;
+  --bg: #ffffff;
+  --card-bg: #fbfbfb;
+  --radius: 10px;
+
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--black);
+}
+
+/* =========================
+   Page Layout
+   ========================= */
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background: var(--bg);
+  display: flex;
+  justify-content: center;
+  padding: 32px 20px;
+}
+
+.wrap {
+  width: 100%;
+  max-width: 1000px;
+  background: #fff;
+  padding: 28px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+}
+
+/* =========================
+   Header
+   ========================= */
+header {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  padding-bottom: 18px;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 22px;
+}
+
+.badge {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: linear-gradient(180deg, var(--garnet), var(--garnet-dark));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.25rem;
+  box-shadow: 0 6px 18px rgba(115,0,10,0.25);
+}
+
+h1 {
+  margin: 0;
+  font-size: 1.6rem;
+}
+
+.lead {
+  margin: 8px 0 0;
+  color: var(--text-muted);
+  max-width: 80ch;
+}
+
+/* =========================
+   Links
+   ========================= */
+.links {
+  margin-top: 12px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.links a {
+  text-decoration: none;
+  color: var(--garnet);
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(115,0,10,0.15);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.links a:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(115,0,10,0.15);
+}
+
+/* =========================
+   Projects
+   ========================= */
+.projects h2 {
+  font-size: 1.15rem;
+  margin-bottom: 14px;
+  padding-left: 12px;
+  border-left: 4px solid var(--garnet);
+}
+
+.project {
+  position: relative;
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  padding: 16px 16px 16px 22px;
+  margin-bottom: 14px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.05);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.project::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 6px;
+  background: linear-gradient(180deg, var(--garnet), var(--garnet-dark));
+  border-radius: var(--radius) 0 0 var(--radius);
+}
+
+.project strong {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 1.02rem;
+}
+
+.project:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.1);
+}
+
+.meta {
+  margin-top: 10px;
+  font-size: 0.92rem;
+  color: var(--text-muted);
+}
+
+.meta a {
+  color: var(--garnet);
+  font-weight: 600;
+  text-decoration: none;
+  margin-left: 6px;
+}
+
+/* =========================
+   Footer
+   ========================= */
+footer {
+  margin-top: 26px;
+  padding-top: 16px;
+  border-top: 1px solid #eee;
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+footer a {
+  color: var(--garnet);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+/* =========================
+   Responsive
+   ========================= */
+@media (max-width: 720px) {
+  .badge {
+    width: 60px;
+    height: 60px;
+    font-size: 1.1rem;
+  }
+
+  h1 {
+    font-size: 1.35rem;
+  }
+
+  .wrap {
+    padding: 18px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
+}
