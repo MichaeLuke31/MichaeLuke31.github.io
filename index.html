@@ -6,85 +6,70 @@
   <title>Luke Peter — Computer Engineering</title>
   <meta name="description" content="Luke Peter — Computer Engineering student interested in AI, cybersecurity, and embedded systems. Portfolio and projects." />
 
-  <style>
-    /* Minimal, neutral styling — fast to load */
-    :root{font-family:system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;font-size:16px;line-height:1.5;color:#111}
-    body{max-width:900px;margin:28px auto;padding:18px}
-    header{border-bottom:1px solid #e6e6e6;padding-bottom:12px;margin-bottom:18px}
-    h1{margin:0;font-size:1.6rem}
-    p.lead{margin:8px 0 0;color:#333}
-    .links a{margin-right:12px;text-decoration:none}
-    .projects{margin-top:18px}
-    .project{padding:12px;border:1px solid #f0f0f0;border-radius:8px;margin-bottom:12px}
-    .meta{font-size:0.9rem;color:#555;margin-top:6px}
-    footer{margin-top:28px;padding-top:12px;border-top:1px solid #eee;color:#555;font-size:0.9rem}
-    @media (max-width:520px){body{padding:12px}}
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
-  <header>
-    <h1>Luke Peter</h1>
-    <p class="lead">I am a Computer Engineering student with strong interest in artificial intelligence and cyber security. 
-      During my time with the South Carolina Department of Commerce, I gained exposure to a rapidly changing IT environment, as the agency migrated from on-premisis to cloud-based. 
-      I am currently seeking technical roles where I can apply my skills and continue to grow as an engineer.</p>
-    <p class="links">
-      <a href="https://github.com/MichaeLuke31" target="_blank" rel="noopener">GitHub</a> |
-      <a href="https://www.linkedin.com/in/lukepeter31/" target="_blank" rel="noopener">LinkedIn</a>
-    </p>
-  </header>
+  <div class="wrap">
+    <header>
+      <div class="badge" aria-hidden="true">LP</div>
 
-  <section class="projects" aria-label="Projects">
-    <h2>Projects</h2>
+      <div class="title-block">
+        <h1>Luke Peter</h1>
+        <p class="lead">
+          I am a Computer Engineering student with strong interest in artificial intelligence and cyber security. 
+          During my time with the South Carolina Department of Commerce, I gained exposure to a rapidly changing IT environment, as the agency migrated from on-premisis to cloud-based. 
+          I am currently seeking technical roles where I can apply my skills and continue to grow as an engineer.
+        </p>
 
-    <article class="project">
-      <strong>Secure Application Project</strong> — Currently building a full n-tier application using generative AI. The goal of this project is to explore the entire process of developing an application, using ChatGPT
-      as our primary code writer and evaluating its ability to develop secure software. 
-      <div class="meta">Tools: Java, SQL, Eclpise, MySQL, ChatGPT  Date: In Progress <a href="https://github.com/MichaeLuke31/CSCE_548/tree/main/MealPlanner" target="_blank" rel="noopener">Code</a></div>
-    </article>
+        <p class="links">
+          <a href="https://github.com/MichaeLuke31" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://www.linkedin.com/in/lukepeter31/" target="_blank" rel="noopener">LinkedIn</a>
+        </p>
+      </div>
+    </header>
 
-    <article class="project">
-      <strong>AI Classification Project</strong> — Trained a DistilBERT model to classify IMDB movie reviews on sentiment and compared different levels of training to 
-      different models using various evaluation metrics. 
-      <div class="meta">Tools: Python, PyTorch, Scikit-learn, Pandas, NLP, jupyter notebook, VS Code Date: Fall 2025 <a href="https://github.com/MichaeLuke31/Projects/tree/main/ai-classification" target="_blank" rel="noopener">Code</a></div>
-    </article>
+    <section class="projects" aria-label="Projects">
+      <h2>Projects</h2>
 
-    <article class="project">
-      <strong>Dual-Core Nios II Embedded System</strong> — Implemented a dual-processor Nios II embedded system with floating-point co-processors, parallel image processing, 
-      and mutex synchronization to evaluate performance gains from multiprocessing and hardware acceleration.
-      <div class="meta">Tools: FPGA board, Quartus. Date:April 2025</div>
-    </article>
+      <article class="project">
+        <strong>Secure Application Project</strong> — Currently building a full n-tier application using generative AI. The goal of this project is to explore the entire process of developing an application, using ChatGPT
+        as our primary code writer and evaluating its ability to develop secure software.
+        <div class="meta">
+          Tools: Java, SQL, Eclpise, MySQL, ChatGPT · Date: In Progress
+          <a href="https://github.com/MichaeLuke31/CSCE_548/tree/main/MealPlanner" target="_blank" rel="noopener">Code</a>
+        </div>
+      </article>
 
-    <article class="project">
-      <strong>RISC-V Processor</strong> — Developed 3 stage pipelined processor that implemented a subset of RV32I instruction set.   
-      <div class="meta">Tools: Verilog, FPGA board, QuestaSIM, Quartus. Date:Fall 2024</div>
-    </article>
+      <article class="project">
+        <strong>AI Classification Project</strong> — Trained a DistilBERT model to classify IMDB movie reviews on sentiment and compared different levels of training to 
+        different models using various evaluation metrics.
+        <div class="meta">
+          Tools: Python, PyTorch, Scikit-learn, Pandas, NLP, Jupyter Notebook, VS Code · Date: Fall 2025
+          <a href="https://github.com/MichaeLuke31/Projects/tree/main/ai-classification" target="_blank" rel="noopener">Code</a>
+        </div>
+      </article>
 
-  </section>
+      <article class="project">
+        <strong>Dual-Core Nios II Embedded System</strong> — Implemented a dual-processor Nios II embedded system with floating-point co-processors, parallel image processing, 
+        and mutex synchronization to evaluate performance gains from multiprocessing and hardware acceleration.
+        <div class="meta">Tools: FPGA board, Quartus · Date: April 2025</div>
+      </article>
 
-  <footer>
-    <p>Contact: <a href="mailto:luke120123@outlook.com">luke120123@outlook.com</a> • Resume: <a href="Resume.pdf" target="_blank">Download PDF</a></p>
-  </footer>
+      <article class="project">
+        <strong>RISC-V Processor</strong> — Developed 3-stage pipelined processor implementing a subset of the RV32I instruction set.
+        <div class="meta">Tools: Verilog, FPGA board, QuestaSIM, Quartus · Date: Fall 2024</div>
+      </article>
+    </section>
+
+    <footer>
+      <p>
+        Contact: <a href="mailto:luke120123@outlook.com">luke120123@outlook.com</a>
+      </p>
+      <p>
+        Resume: <a href="Resume.pdf" target="_blank">Download PDF</a>
+      </p>
+    </footer>
+  </div>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
