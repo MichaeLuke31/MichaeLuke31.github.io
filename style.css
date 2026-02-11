@@ -39,7 +39,38 @@ body {
 }
 
 /* =========================
-   Header (sticky + shrink)
+   Top progress indicator
+   ========================= */
+/* Invisible to users who prefer reduced motion (controlled in JS by aria-hidden), but styled here */
+#page-progress {
+  position: fixed;
+  top: 6px;               /* sits above header which is top:12px */
+  left: 0;
+  height: 4px;
+  width: 0%;
+  background: linear-gradient(90deg, var(--garnet), var(--garnet-dark));
+  border-radius: 2px;
+  z-index: 9999;
+  transform-origin: left center;
+  box-shadow: 0 4px 10px rgba(115,0,10,0.12);
+  transition: width 120ms linear;
+  pointer-events: none;
+}
+
+/* Small subtle track behind progress (thin, centered) */
+#page-progress::after {
+  content: "";
+  position: fixed;
+  top: 6px;
+  left: 0;
+  right: 0;
+  height: 4px;
+  z-index: -1;
+  background: transparent;
+}
+
+/* =========================
+   Header (sticky + shrink + hide)
    ========================= */
 header#page-header {
   display: flex;
@@ -49,11 +80,10 @@ header#page-header {
   border-bottom: 1px solid transparent;
   margin-bottom: 22px;
   position: sticky;
-  top: 12px; /* small offset so shadow sits comfortably within page padding */
-  z-index: 50;
-  transition: padding 180ms ease, background-color 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
-  will-change: padding, box-shadow;
-  /* starting background is translucent so content scrolls under lightly */
+  top: 12px; /* offset so progress bar can sit above */
+  z-index: 1000;
+  transition: padding 180ms ease, background-color 180ms ease, box-shadow 180ms ease, border-color 180ms ease, transform 210ms cubic-bezier(.2,.9,.2,1);
+  will-change: padding, box-shadow, transform;
   background-color: rgba(255,255,255,0.9);
   backdrop-filter: blur(0px);
 }
@@ -65,6 +95,13 @@ header#page-header.scrolled {
   border-bottom-color: rgba(0,0,0,0.06);
   box-shadow: 0 8px 20px rgba(0,0,0,0.08);
   backdrop-filter: blur(4px);
+}
+
+/* auto-hide state (translate header up) */
+header#page-header.hidden {
+  transform: translateY(calc(-100% - 8px));
+  pointer-events: none;
+  opacity: 0.98;
 }
 
 /* Badge size (shrinks when scrolled) */
@@ -223,4 +260,5 @@ footer a {
 /* reduce motion */
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; animation: none !important; }
+  #page-progress { display: none !important; }
 }
